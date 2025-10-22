@@ -155,13 +155,15 @@ python3 main.py
 | Class Name | Super or Sub? | Direct parent(s) |
 | ---------- | ------------- | ---------------- |
 | NotReal    | Sub           | NotRealParent    |
-|   ...      |   ...         |      ...         |
+|  Smiley| super | Parent ( Happy and Sad) |
+|  Happy |   Sub        |      Child         |
+| Sad | Sub | Child |
+
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
-> Your answer here
->
-
+> The concept of abstraction is to hide unececcassary complex details of the programs allowingthe users to work with more simplistic view of the system.
+> An example is the classes of happy and smiley allowing the import of the code into main.py allowing the use of of smiley.show() which hides the complexity of the code within the class smiley of drawing the face, eye and mouth.
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
 > Your answer here
