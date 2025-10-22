@@ -100,36 +100,49 @@ python3 main.py
    | bool                    | sad   |for pixel in eyes: if wide_open eyes = self.BLANK else: eyes = self.YELLOW self.pixels[pixel] = eyes|
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> Your answer here
->
+> An example of a class variable is one of the colours ( Red, Yellow, etc.) within the class Smiley the reason why it is a class variable is due to the fact that it belongs to the class smiley and not any one object.
+> An instance variable example within smiley.py is the self.pixels (using the __init__(self) ), it is an instance variable is due to it belonging to a specific object created from the class smiley. 
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   > Your answer here
-   >
+   >  The conductor in general is the __init__ in which automatically runs when an object is created, in which it general purpose is to setup a new object with attributes and defult values.
+   > The conductor in particular creates a happy smiley object by first setting up the base ( Smiley) in which it thens gives it eyes and mouth.
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-   > Your answer here
-   >
+   >  the statement:     def __init__(self):
+        super().__init__()
+
+        self.draw_mouth()
+        self.draw_eyes()
+
+   > in which will results in the class happy to inherit and set up all the base of smiley.
 
 ### 2.3. Code style
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
 
-> Your answer here
->
+> The code style used in the code is using the PEP8 standard in which SenseHat reccommends PEP8 standards as well in which will results in the coding style of both being similar.
+> The reason in which why it is similar is due to the reccommended coding style of PEP8 of both the code.
 
 2. List three aspects of this convention you see applied in the code.
 
-> Your answer here
->
+> 1. Classes uses capital words
+> 2. the code uses case_snakes
+> 3. constants and variables uses upper cases.
 
 3. Give two examples of organizational documentation in the code.
 
-> Your answer here
->
+> class Happy(Smiley, Blinkable):
+    """
+   Provides a Smiley with a happy expression
+    """
+>     def draw_eyes(self, wide_open=True):
+        """
+        Draws open or closed eyes on a smiley
+        :param wide_open: Render eyes wide open or shut
+        """
 
 ### 2.4. Identifying and understanding classes
 
