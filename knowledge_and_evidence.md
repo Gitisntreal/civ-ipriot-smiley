@@ -70,35 +70,34 @@ python3 main.py
 
    | Type                    | name       | value          |
    | ----------              | ---------- | -------------- |
-   | built-in primitive type | _          |  _             |
-   | built-in composite type | _          |  _             |
-   | user-defined type       | _          |  _             |
+   | built-in primitive type | integer    | 255            |
+   | built-in composite type | White      | [255, 255, 255]|
+   | user-defined type       | Smiley     |                |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
    | Object                   | Type                    |
    | ------------             | ----------------------- |
-   | self.pixels              | _                       |
-   | A member of self.pixels  | _                       |
-   | self                     | _                       |
+   | self.pixels              | built in composite      |
+   | A member of self.pixels  | user defined            |
+   | self                     | built in primitive      |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
    | Control Flow | File       | First line  | Line range  |
    | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   |  sequence    | smiley.py  |1            | 39          |
+   |  selection   | sad.py     | 25          | [10, 13, 18, 21] (in eyes)|
+   |  iteration   | happy.py          |  21          | [41, 46, 50, 51, 52, 53] (in mouth)|
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
    | Type                    | Used? | Example |
    | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
-
+   | int                     | smiley, sad and happy|255, 49 and 41        |
+   | float                   | happy    | 0.25        |
+   | str                     | smiley, sad and happy     | RED = (255, 0, 0 )         |
+   | bool                    | sad   |for pixel in eyes: if wide_open eyes = self.BLANK else: eyes = self.YELLOW self.pixels[pixel] = eyes|
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
 > Your answer here
