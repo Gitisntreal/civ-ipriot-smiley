@@ -304,15 +304,16 @@ Include a screenshot of the sad smiley or the modified `main.py`:
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
         > They are a class variable and are not expected to change during the program execution because the colours RGB values within the variables are fixed and will not change. 
      3. Add the color blue to the appropriate class using the appropriate format and values.
-        ![Colour Blue](screenshots/sad_blinking.png)
+        ![Colour Blue](screenshots/blue.png)
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > Smiley - defined in this class in which can be used for other subclasses
+        > Sad and Happy - inherits the colours from Smiley.
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     >  Changing the Y = self.YELLOW to self.GREEN ( note the blinking will still be yellow)
 
 
 
@@ -321,12 +322,13 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   Changing the color of the smileys once is straightforward, but it isn't very flexible. To facilitate various colors for smileys, it is advisable not to hardcode values in any class. This approach was identified earlier as a necessary change. Let's start by removing the built-in assumptions about color in our classes.
 
   1. **Add a method called `complexion` to the `Smiley` class:** Implement this instance method to return `self.YELLOW`. Using the term "complexion" instead of "color" provides a more abstract terminology that focuses on the meaning rather than implementation.
-
+![Complexion](screenshots/complxion.png)
   2. **Refactor subclasses to use the `complexion` method:** Modify any subclass that directly accesses the color variable to instead utilize the new `complexion` method. This ensures that color handling is centralized and can be easily modified in the future.
-
+![refactor](screenshots/refactor.png)
   3. **Determine the applicable Object-Oriented principle:** Consider whether Abstraction, Polymorphism, Inheritance, or Encapsulation best applies to the modifications made in this step.
-
-  4. **Verify the implementation:** Ensure that the modifications function as expected. The smileys should still display in yellow, confirming that the new method correctly replaces the direct color references.
+     > Abstraction as we are introducing complexion() method and refactoring sublcasses to use it instead of directly accessing colour variables.
+  5. **Verify the implementation:** Ensure that the modifications function as expected. The smileys should still display in yellow, confirming that the new method correctly replaces the direct color references.
+  
 
   This step is crucial for setting up a more flexible system for color management in the smiley display logic, allowing for easy adjustments and extensions in the future.
 
