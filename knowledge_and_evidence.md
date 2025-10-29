@@ -340,7 +340,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
     ![init complexion](screenshots/adding_complexion.png) 
 
   3. **Introduce a new instance variable:** Create a variable called `my_complexion` and assign the `complexion` parameter to it. This step ensures that each smiley instance can maintain its own color state.
- ![ my_complexion](screenshots/my_complexion.png)
+ ![ my_complexion](screenshots/adding _complexion.png)
   4. **Rationale for `my_complexion`:** Using a distinct instance variable like `my_complexion` avoids potential conflicts with the method parameter names and clarifies that it is an attribute specific to the object.
 
   5. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
