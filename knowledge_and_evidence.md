@@ -135,14 +135,14 @@ python3 main.py
 3. Give two examples of organizational documentation in the code.
 
 > class Happy(Smiley, Blinkable):
-    """
-   Provides a Smiley with a happy expression
-    """
+>    """
+>   Provides a Smiley with a happy expression
+>    """
 >     def draw_eyes(self, wide_open=True):
-        """
-        Draws open or closed eyes on a smiley
-        :param wide_open: Render eyes wide open or shut
-        """
+>         """
+>        Draws open or closed eyes on a smiley
+>        :param wide_open: Render eyes wide open or shut
+>         """
 
 ### 2.4. Identifying and understanding classes
 
@@ -166,33 +166,44 @@ python3 main.py
 > An example is the classes of happy and smiley allowing the import of the code into main.py allowing the use of of smiley.show() which hides the complexity of the code within the class smiley of drawing the face, eye and mouth.
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
-> Your answer here
->
+> The name of the process of deriving from base classes is called inheritance.
+> It purpose within the project is to is allow code reusability as it allows the sub-classses to inherit everything that is defined within the superclassess or parent class.
 
 ### 2.5. Compare and contrast classes
 
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > Your answer here
-   >
+   > The first key difference is that happy class inherits from smiley and blinkable where as sad only inherits smiley only
+   > The second key difference is the purpose of both the classes, happy class objective is to draw a happy expression while sad is to draw a sad expression
+   > the third key difference is the functionality of both the classes while happy has the extra function of blinking while sad does not.
 2. What are the key similarities?
-   > Your answer here
-   >
+   > Both class inherit Smiley
+   > they both depend on Smiley to work as they cannot work on it own ( relying on the pixel and colour set up)
 3. What difference stands out the most to you and why?
-   > Your answer here
-   >
+   > how the logic of the eye being drawn is coded where as in happy
+   > for pixel in eyes:
+            self.pixels[pixel] = self.BLANK if wide_open else self.YELLOW
+   > versus sad
+   for pixel in eyes:
+            if wide_open:
+                eyes = self.BLANK
+            else:
+                eyes = self.YELLOW
+            self.pixels[pixel] = eyes
+   
+   >  the reason why it stand out the most is because it is re-using the eye varibles to store more code/ data into it versus in happy it does not do this.
 4. How does this difference affect the functionality of these classes
-   > Your answer here
+   >   where in happy if wide_open is true then pixel colour is set to blank and if false then pixel colour is set to yellow where the default for wide_open is True where as in sad it using the same parameter but works differently within the loop where it is re-using the varible eyes to store the colour value (self.blank and self.yellow) which is overwriting the original eye list meaning after the first iteration it no longer refers to the pixel position of the eye but is a True/False statement for colours. 
    >
 
 ### 2.6. Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
-   > Your answer here
-   >
+   > The class smiley utilize the functionality of SenseHat
+   
 2. Which of these classes directly interact with the SenseHat functionalities?
-   > Your answer here
+   > 
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
    > Your answer here
