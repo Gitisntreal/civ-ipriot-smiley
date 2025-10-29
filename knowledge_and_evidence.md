@@ -242,7 +242,12 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
    ```python
    def blink(self, delay=0.25):
-       pass  # Replace 'pass' with your implementation
+       self.draw_eyes(wide_open = False)
+       self.show()
+       time.sleep(delay)
+       self.draw_eyes(wide_open = True)
+       self.show()
+
    ```
 
 2. **Code Implementation:** Implement the code that allows the Sad smiley to blink. Use the implementation from the Happy Smiley as a reference. Ensure your new method functions similarly by controlling the blink duration through the `delay` argument.
@@ -257,7 +262,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > It takes 1 second before it blinks and also only blinks once and after that it is static, for future features it should blink randomly.
 
   ### 2.8. If It Walks Like a Duck…
 
@@ -265,23 +270,23 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
-     > Your answer here
+     > Blinkable is an abstract class where it is behavior focused in which usually relies on other classes to wrok (smiley).
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  > It is a mixin class as it is designed to be combined with other classes and can't work on it own and work when combined with the class smiley.
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  > Inheritance because as said before it designed to be implemented by other classes and in which it functionality is aquired by subclasses thrrough inheritance which allow happy and sad to have blink() fucntion.
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
+  > By using draw_eyes(wide_open = True/False), show() and time.sleep(delay =) to set the time in it closes it eyes for.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
+  > It type of polymorphism called duck typing and works in python because python is a dynamically typed language where it has no compile-time type checking and methods are resovled at runtime, in other statically typed programming you are required to declare an interface or base class for it to work.
 
   ***
 
@@ -294,11 +299,12 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > Red, White, Green, Yellow and Blank
+        > They are in the class of Smiley
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > They are a class variable and are not expected to change during the program execution because the colours RGB values within the variables are fixed and will not change. 
      3. Add the color blue to the appropriate class using the appropriate format and values.
-
+        ![Colour Blue](screenshots/sad_blinking.png)
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
