@@ -38,3 +38,5 @@ class Smiley:
         Show the smiley on the screen.
         """
         self.sense_hat.set_pixels(self.pixels)
+    def complexion(self):
+        return self.YELLOW
