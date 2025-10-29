@@ -135,14 +135,15 @@ python3 main.py
 3. Give two examples of organizational documentation in the code.
 
 > class Happy(Smiley, Blinkable):
->    """
->   Provides a Smiley with a happy expression
->    """
->     def draw_eyes(self, wide_open=True):
->         """
->        Draws open or closed eyes on a smiley
->        :param wide_open: Render eyes wide open or shut
->         """
+   """
+  Provides a Smiley with a happy expression
+   """
+
+>    def draw_eyes(self, wide_open=True):
+          """
+         Draws open or closed eyes on a smiley
+         :param wide_open: Render eyes wide open or shut
+          """
 
 ### 2.4. Identifying and understanding classes
 
@@ -181,11 +182,14 @@ Compare and contrast the classes Happy and Sad.
    > Both class inherit Smiley
    > they both depend on Smiley to work as they cannot work on it own ( relying on the pixel and colour set up)
 3. What difference stands out the most to you and why?
-   > how the logic of the eye being drawn is coded where as in happy
-   > for pixel in eyes:
+   > how the logic of the eye being drawn is coded where as in happy:
+   
+   >  for pixel in eyes:
             self.pixels[pixel] = self.BLANK if wide_open else self.YELLOW
-   > versus sad
-   for pixel in eyes:
+   
+   >  versus sad:
+   
+    > for pixel in eyes:
             if wide_open:
                 eyes = self.BLANK
             else:
@@ -193,21 +197,21 @@ Compare and contrast the classes Happy and Sad.
             self.pixels[pixel] = eyes
    
    >  the reason why it stand out the most is because it is re-using the eye varibles to store more code/ data into it versus in happy it does not do this.
-4. How does this difference affect the functionality of these classes
+5. How does this difference affect the functionality of these classes
    >   where in happy if wide_open is true then pixel colour is set to blank and if false then pixel colour is set to yellow where the default for wide_open is True where as in sad it using the same parameter but works differently within the loop where it is re-using the varible eyes to store the colour value (self.blank and self.yellow) which is overwriting the original eye list meaning after the first iteration it no longer refers to the pixel position of the eye but is a True/False statement for colours. 
    >
 
 ### 2.6. Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
-   > The class smiley utilize the functionality of SenseHat
+   > The class smiley directly utilize the functionality of SenseHat while the subclasses indirectly utilize SenseHat through the superclass Smiley
    
 2. Which of these classes directly interact with the SenseHat functionalities?
-   > 
-   >
+   >  Smiley uses the SenseHat() directly 
+   >  Happy and Sad uses SenseHat indirctly through .show() which is inherited through smiley
+ 
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
-   >
+   > The smiley class encapsulate SenseHat via using self.sensehat = SenseHat(), what it does is the sensehat hardware object is created within the class smiley in which it is stored as  an instances variable and classes such as happy and sad doesn't need to understand how SenseHat works, they only need to call it ( self.show()) meaning that the happy and sad classes only need to draw the mouth and eye and does not need to address the pixel position and lighting of the pixels.
 
 ### 2.7. Sad Smileys Can’t Blink (Or Can They?)
 
@@ -217,23 +221,21 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
-> Your answer here
->
+>  No, the smiley class is used to build and draw the expression in happy and sad so it does not need to have code to blink as it allows for the future expression to decide if the expression requires blinking and can set the blinking intervals within the expression
+
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> Your answer here
->
+> No, as every blinking will have a differing delay to their blinking and intervals of blinking.
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
-> Your answer here
->
+>  polymorphism is a programming concept that allows obejects of differing classes to be treated through the same interface, even if their internal implementation is different, refering to Happy and Sad it will use the same intferace of blink() but will behave differently as each of the object will responds according to it own implemenation.
+
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
-> Your answer here
->
+> Happy inherits Smiley and Blinkable in which is uses self.draw_eyes() and self.show() in the blink method it isn't directly interacting with SenseHat for it to work, it is relying on the inheritance of Smiley to show the face meaning that the call method of blink() is relying on the inherited method from Smiley to work, this is important for polymorphism as it allows the same call method of blink() to behave differently for each class.
 1. **Implement Blink in Sad Class:**
 
    - Create a new method called `blink` within the Sad class. Ensure you use the same method signature as in the Happy class:
