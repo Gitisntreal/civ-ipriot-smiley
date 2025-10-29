@@ -1,8 +1,7 @@
 from smiley import Smiley
 import time
-from blinkable import Blinkable
 
-class Sad(Smiley, Blinkable):
+class Sad(Smiley):
     def __init__(self):
         super().__init__()
 
