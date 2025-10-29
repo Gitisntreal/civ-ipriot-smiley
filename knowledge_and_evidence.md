@@ -360,7 +360,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
      ```python
      super().__init__(complexion=self.BLUE)
      ```
-     ![SAD](screenshots/SAD_BLUE)
+     ![SAD](screenshots/SAD_BLUE.png)
 
 
   2. **Test color functionality for the Sad smiley:** Execute the program to verify that the Sad smiley now appears blue.
